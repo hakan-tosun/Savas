@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using SavasLibrary.Concrete;
 
 namespace Savas.Library.Concrete
 {
@@ -15,6 +17,7 @@ namespace Savas.Library.Concrete
 
         private readonly Timer _gecenSureTimer = new Timer { Interval = 1000 };
         private TimeSpan _gecenSure;
+        private readonly Panel _ucaksavarPanel;
 
         #endregion
 
@@ -41,8 +44,9 @@ namespace Savas.Library.Concrete
 
         #region Metotlar
 
-        public Oyun()
+        public Oyun(Panel ucaksavarPanel)
         {
+            _ucaksavarPanel = ucaksavarPanel;
             _gecenSureTimer.Tick += GecenSureTimer_Tick;
         }
 
@@ -57,7 +61,18 @@ namespace Savas.Library.Concrete
 
             DevamEdiyorMu = true;
             _gecenSureTimer.Start();
+
+            UcaksavarOlustur();
+
         }
+
+        private void UcaksavarOlustur()
+        {
+            var ucaksavar = new Ucaksavar(_ucaksavarPanel.Width);
+            ucaksavar.Image = Image.FromFile(@"pictures\plane.ico");
+            _ucaksavarPanel.Controls.Add(ucaksavar);
+        }
+
         private void Bitir()
         {
             if (!DevamEdiyorMu) return;
