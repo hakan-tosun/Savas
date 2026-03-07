@@ -74,9 +74,9 @@
             // 
             this.ucaksavarPanel.BackColor = System.Drawing.Color.Teal;
             this.ucaksavarPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ucaksavarPanel.Location = new System.Drawing.Point(0, 292);
+            this.ucaksavarPanel.Location = new System.Drawing.Point(0, 410);
             this.ucaksavarPanel.Name = "ucaksavarPanel";
-            this.ucaksavarPanel.Size = new System.Drawing.Size(800, 158);
+            this.ucaksavarPanel.Size = new System.Drawing.Size(800, 40);
             this.ucaksavarPanel.TabIndex = 1;
             // 
             // savasAlaniPanel
@@ -85,7 +85,7 @@
             this.savasAlaniPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.savasAlaniPanel.Location = new System.Drawing.Point(0, 84);
             this.savasAlaniPanel.Name = "savasAlaniPanel";
-            this.savasAlaniPanel.Size = new System.Drawing.Size(800, 208);
+            this.savasAlaniPanel.Size = new System.Drawing.Size(800, 326);
             this.savasAlaniPanel.TabIndex = 2;
             // 
             // AnaForm
