@@ -18,7 +18,9 @@ namespace Savas.Library.Concrete
         private readonly Timer _gecenSureTimer = new Timer { Interval = 1000 };
         private TimeSpan _gecenSure;
         private readonly Panel _ucaksavarPanel;
+        private readonly Panel _savasAlaniPanel;
         private Ucaksavar _ucaksavar;
+        private readonly List<Mermi> _mermiler = new List<Mermi>();
 
         #endregion
 
@@ -44,6 +46,13 @@ namespace Savas.Library.Concrete
         #endregion
 
         #region Metotlar
+
+        public Oyun(Panel ucaksavarPanel, Panel savasAlaniPanel)
+        {
+            _ucaksavarPanel = ucaksavarPanel;
+            _savasAlaniPanel = savasAlaniPanel;
+            _gecenSureTimer.Tick += GecenSureTimer_Tick;
+        }
 
         public Oyun(Panel ucaksavarPanel)
         {
@@ -83,7 +92,10 @@ namespace Savas.Library.Concrete
 
         public void AtesEt()
         {
-            throw new NotImplementedException();
+            if (!DevamEdiyorMu) return;
+            var mermi = new Mermi(_savasAlaniPanel.Size, _ucaksavar.Center);
+            _mermiler.Add(mermi);
+            _savasAlaniPanel.Controls.Add(mermi);
         }
 
         public void UcaksavariHareketEttir(Yon yon)

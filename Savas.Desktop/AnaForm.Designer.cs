@@ -81,7 +81,7 @@
             // 
             // savasAlaniPanel
             // 
-            this.savasAlaniPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.savasAlaniPanel.BackColor = System.Drawing.Color.PaleTurquoise;
             this.savasAlaniPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.savasAlaniPanel.Location = new System.Drawing.Point(0, 84);
             this.savasAlaniPanel.Name = "savasAlaniPanel";
